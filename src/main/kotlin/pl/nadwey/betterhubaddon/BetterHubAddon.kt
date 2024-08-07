@@ -1,8 +1,8 @@
-package com.example
+package pl.nadwey.betterhubaddon
 
 import xyz.xenondevs.nova.addon.Addon
 
-object ExampleAddon : Addon() {
+object BetterHubAddon : Addon() {
     
     override fun init() {
         // Called when the addon is initialized.

@@ -1,0 +1,13 @@
+{
+    "result": "betterhub:hazard_block",
+    "amount": 2,
+    "shape": [
+        "  d",
+        " c ",
+        "d  "
+    ],
+    "ingredients": {
+        "c": "minecraft:black_concrete",
+        "d": "minecraft:yellow_dye"
+    }
+}

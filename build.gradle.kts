@@ -1,10 +1,10 @@
 import org.gradle.configurationcache.extensions.capitalized
+import org.jetbrains.kotlin.gradle.dsl.JvmTarget
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
+import java.util.*
 
-group = "com.example" // TODO: Change this to your group
+group = "pl.nadwey.betterhubaddon" // TODO: Change this to your group
 version = "1.0-SNAPSHOT" // TODO: Change this to your addon version
-
-val mojangMapped = project.hasProperty("mojang-mapped")
 
 plugins {
     alias(libs.plugins.kotlin)
@@ -13,6 +13,7 @@ plugins {
 }
 
 repositories {
+    mavenLocal()
     mavenCentral()
     maven("https://papermc.io/repo/repository/maven-public/")
     maven("https://repo.xenondevs.xyz/releases")
@@ -25,32 +26,28 @@ dependencies {
 
 addon {
     id.set(project.name)
-    name.set(project.name.capitalized())
+    name.set(project.name.uppercase())
     version.set(project.version.toString())
     novaVersion.set(libs.versions.nova)
-    main.set("com.example.ExampleAddon") // TODO: Change this to your main class
-    authors.add("ExampleAuthor") // TODO: Set your list of authors
+    main.set("pl.nadwey.betterhubaddon.BetterHubAddon") // TODO: Change this to your main class
+    authors.add("Nadwey") // TODO: Set your list of authors
 }
 
 tasks {
     register<Copy>("addonJar") {
         group = "build"
-        if (mojangMapped) {
-            dependsOn("jar")
-            from(File(buildDir, "libs/${project.name}-${project.version}-dev.jar"))
-        } else {
-            dependsOn("reobfJar")
-            from(File(buildDir, "libs/${project.name}-${project.version}.jar"))
-        }
+
+        dependsOn("jar")
+
+        from(File(layout.buildDirectory.asFile.get(), "libs/${project.name}-${project.version}.jar"))
         
-        from(File(project.buildDir, "libs/${project.name}-${project.version}.jar"))
         into((project.findProperty("outDir") as? String)?.let(::File) ?: project.buildDir)
         rename { "${addonMetadata.get().addonName.get()}-${project.version}.jar" }
     }
     
     withType<KotlinCompile> {
-        kotlinOptions {
-            jvmTarget = "17"
+        compilerOptions {
+            jvmTarget to JvmTarget.JVM_21
         }
     }
 }
