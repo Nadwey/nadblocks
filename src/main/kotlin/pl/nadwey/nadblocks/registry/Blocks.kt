@@ -1,7 +1,7 @@
-package pl.nadwey.betterhubaddon.registry
+package pl.nadwey.nadblocks.registry
 
 import org.bukkit.Material
-import pl.nadwey.betterhubaddon.BetterHubAddon
+import pl.nadwey.nadblocks.NadBlocks
 import xyz.xenondevs.nova.addon.registry.BlockRegistry
 import xyz.xenondevs.nova.data.resources.layout.block.BackingStateCategory
 import xyz.xenondevs.nova.initialize.Init
@@ -16,7 +16,7 @@ import xyz.xenondevs.nova.world.block.behavior.Breakable
 import xyz.xenondevs.nova.world.block.sound.SoundGroup
 
 @Init(stage = InitStage.PRE_PACK)
-object Blocks : BlockRegistry by BetterHubAddon.registry {
+object Blocks : BlockRegistry by NadBlocks.registry {
     private val STONE =
         Breakable(
             2.0, VanillaToolCategories.PICKAXE, VanillaToolTiers.WOOD, true, Material.BLACK_CONCRETE)

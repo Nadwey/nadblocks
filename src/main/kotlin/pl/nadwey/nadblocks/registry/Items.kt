@@ -1,11 +1,11 @@
-package pl.nadwey.betterhubaddon.registry
+package pl.nadwey.nadblocks.registry
 
-import pl.nadwey.betterhubaddon.BetterHubAddon
+import pl.nadwey.nadblocks.NadBlocks
 import xyz.xenondevs.nova.addon.registry.ItemRegistry
 import xyz.xenondevs.nova.initialize.Init
 import xyz.xenondevs.nova.initialize.InitStage
 
 @Init(stage = InitStage.PRE_PACK)
-object Items : ItemRegistry by BetterHubAddon.registry {
+object Items : ItemRegistry by NadBlocks.registry {
     val HAZARD_BLOCK = registerItem(Blocks.HAZARD_BLOCK)
 }

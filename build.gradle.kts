@@ -1,9 +1,7 @@
-import org.gradle.configurationcache.extensions.capitalized
 import org.jetbrains.kotlin.gradle.dsl.JvmTarget
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
-import java.util.*
 
-group = "pl.nadwey.betterhubaddon" // TODO: Change this to your group
+group = "pl.nadwey.nadblocks" // TODO: Change this to your group
 version = "1.0-SNAPSHOT" // TODO: Change this to your addon version
 
 plugins {
@@ -29,7 +27,7 @@ addon {
     name.set(project.name.uppercase())
     version.set(project.version.toString())
     novaVersion.set(libs.versions.nova)
-    main.set("pl.nadwey.betterhubaddon.BetterHubAddon") // TODO: Change this to your main class
+    main.set("pl.nadwey.nadblocks.NadBlocks") // TODO: Change this to your main class
     authors.add("Nadwey") // TODO: Set your list of authors
 }
 

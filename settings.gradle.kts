@@ -1,4 +1,4 @@
-rootProject.name = "betterhub" // TODO: Change this to your addon id
+rootProject.name = "nadblocks" // TODO: Change this to your addon id
 
 dependencyResolutionManagement {
     repositories {

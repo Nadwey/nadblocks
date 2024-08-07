@@ -1,8 +1,8 @@
-package pl.nadwey.betterhubaddon
+package pl.nadwey.nadblocks
 
 import xyz.xenondevs.nova.addon.Addon
 
-object BetterHubAddon : Addon() {
+object NadBlocks : Addon() {
     
     override fun init() {
         // Called when the addon is initialized.
