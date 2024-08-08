@@ -1,0 +1,7 @@
+{
+    "result": "minecraft:carrot",
+    "amount": 9,
+    "ingredients": {
+        "nadblocks:carrot_crate": 1
+    }
+}

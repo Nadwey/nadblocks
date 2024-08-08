@@ -1,0 +1,6 @@
+{
+    "parent": "nova:block/block",
+    "textures": {
+        "0": "nadblocks:block/hazard_block"
+    }
+}

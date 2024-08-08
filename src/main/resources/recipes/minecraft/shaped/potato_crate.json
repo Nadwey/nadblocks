@@ -1,0 +1,12 @@
+{
+    "result": "nadblocks:potato_crate",
+    "amount": 1,
+    "shape": [
+        "###",
+        "###",
+        "###"
+    ],
+    "ingredients": {
+        "#": "minecraft:potato"
+    }
+}

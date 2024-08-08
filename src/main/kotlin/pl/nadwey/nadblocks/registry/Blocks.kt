@@ -17,18 +17,40 @@ import xyz.xenondevs.nova.world.block.sound.SoundGroup
 
 @Init(stage = InitStage.PRE_PACK)
 object Blocks : BlockRegistry by NadBlocks.registry {
-    private val STONE =
-        Breakable(
-            2.0, VanillaToolCategories.PICKAXE, VanillaToolTiers.WOOD, true, Material.BLACK_CONCRETE)
+    private val STONE = Breakable(2.0, VanillaToolCategories.PICKAXE, VanillaToolTiers.WOOD, true, Material.BLACK_CONCRETE)
+    private val WOOD = Breakable(2.0, VanillaToolCategories.AXE, VanillaToolTiers.WOOD, false, Material.OAK_WOOD)
 
     val HAZARD_BLOCK =
-        nonInteractiveBlock("hazard_block") { behaviors(BlockDrops, STONE, BlockSounds(SoundGroup.STONE)) }
+        solidNonInteractiveBlock("hazard_block") {
+            behaviors(BlockDrops, STONE, BlockSounds(SoundGroup.STONE))
+        }
 
-    private fun nonInteractiveBlock(name: String, block: NovaBlockBuilder.() -> Unit): NovaBlock =
-        block(name) {
+    val CARROT_CRATE =
+        nonInteractiveBlock("carrot_crate") {
+            behaviors(BlockDrops, WOOD, BlockSounds(SoundGroup.BAMBOO_WOOD))
+            models {
+                stateBacked(BackingStateCategory.LEAVES)
+            }
+        }
+
+    val POTATO_CRATE =
+        nonInteractiveBlock("potato_crate") {
+            behaviors(BlockDrops, WOOD, BlockSounds(SoundGroup.BAMBOO_WOOD))
+            models {
+                stateBacked(BackingStateCategory.LEAVES)
+            }
+        }
+
+    private fun solidNonInteractiveBlock(name: String, block: NovaBlockBuilder.() -> Unit): NovaBlock =
+        nonInteractiveBlock(name) {
             block()
             models {
                 stateBacked(BackingStateCategory.MUSHROOM_BLOCK, BackingStateCategory.NOTE_BLOCK)
             }
+        }
+
+    private fun nonInteractiveBlock(name: String, block: NovaBlockBuilder.() -> Unit): NovaBlock =
+        block(name) {
+            block()
         }
 }

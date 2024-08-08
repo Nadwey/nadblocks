@@ -1,5 +1,25 @@
-# Nova-Addon-Template
-Template for creating Nova addons
+<div align="center">
 
-# Create your own Nova addon
-Visit [our documentation](https://xenondevs.xyz/docs/nova/addon/) for a guide on how to create Nova addons
+# NadBlocks (Nova 0.17)
+
+Some cool blocks that don't do anything (at least for now)
+
+</div>
+
+![demo](img/demo.png)
+
+> [!CAUTION]
+> Important: **This is NOT a plugin**, but a Nova addon.  
+> [Nova Installation Guide](https://xenondevs.xyz/docs/nova/admin/setup/).
+
+## Blocks
+
+- Hazard Block
+- *Vegetable Crates*
+    - Carrot Crate
+    - Potato Crate
+
+# Supported languages
+
+- English
+- Polish
