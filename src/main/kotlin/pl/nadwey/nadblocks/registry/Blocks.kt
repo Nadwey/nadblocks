@@ -2,6 +2,7 @@ package pl.nadwey.nadblocks.registry
 
 import org.bukkit.Material
 import pl.nadwey.nadblocks.NadBlocks
+import pl.nadwey.nadblocks.block.Table
 import xyz.xenondevs.nova.addon.registry.BlockRegistry
 import xyz.xenondevs.nova.data.resources.layout.block.BackingStateCategory
 import xyz.xenondevs.nova.initialize.Init
@@ -17,25 +18,26 @@ import xyz.xenondevs.nova.world.block.sound.SoundGroup
 
 @Init(stage = InitStage.PRE_PACK)
 object Blocks : BlockRegistry by NadBlocks.registry {
-    private val STONE = Breakable(2.0, VanillaToolCategories.PICKAXE, VanillaToolTiers.WOOD, true, Material.BLACK_CONCRETE)
+    private val STONE =
+        Breakable(2.0, VanillaToolCategories.PICKAXE, VanillaToolTiers.WOOD, true, Material.BLACK_CONCRETE)
     private val WOOD = Breakable(2.0, VanillaToolCategories.AXE, VanillaToolTiers.WOOD, false, Material.OAK_WOOD)
+    private val FRAGILE_WOOD = Breakable(1.2, VanillaToolCategories.AXE, VanillaToolTiers.WOOD, false, Material.OAK_WOOD)
 
     val HAZARD_BLOCK =
-        solidNonInteractiveBlock("hazard_block") {
-            behaviors(BlockDrops, STONE, BlockSounds(SoundGroup.STONE))
-        }
+        solidNonInteractiveBlock("hazard_block") { behaviors(BlockDrops, STONE, BlockSounds(SoundGroup.STONE)) }
 
     val CARROT_CRATE =
-        nonInteractiveBlock("carrot_crate") {
-            behaviors(BlockDrops, WOOD, BlockSounds(SoundGroup.BAMBOO_WOOD))
-            models {
-                stateBacked(BackingStateCategory.LEAVES)
-            }
-        }
+        translucentNonInteractiveBlock("carrot_crate") { behaviors(BlockDrops, WOOD, BlockSounds(SoundGroup.BAMBOO_WOOD)) }
 
     val POTATO_CRATE =
-        nonInteractiveBlock("potato_crate") {
-            behaviors(BlockDrops, WOOD, BlockSounds(SoundGroup.BAMBOO_WOOD))
+        translucentNonInteractiveBlock("potato_crate") { behaviors(BlockDrops, WOOD, BlockSounds(SoundGroup.BAMBOO_WOOD)) }
+
+    val TABLE =
+        translucentNonInteractiveBlock("table") { behaviors(Table, FRAGILE_WOOD, BlockSounds(SoundGroup.WOOD)) }
+
+    private fun translucentNonInteractiveBlock(name: String, block: NovaBlockBuilder.() -> Unit): NovaBlock =
+        nonInteractiveBlock(name) {
+            block()
             models {
                 stateBacked(BackingStateCategory.LEAVES)
             }

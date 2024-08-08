@@ -1,0 +1,12 @@
+{
+    "result": "nadblocks:table",
+    "amount": 1,
+    "shape": [
+        "sss",
+        "f f"
+    ],
+    "ingredients": {
+        "s": "minecraft:oak_slab",
+        "f": "minecraft:oak_fence"
+    }
+}

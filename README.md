@@ -18,6 +18,7 @@ Some cool blocks that don't do anything (at least for now)
 - *Vegetable Crates*
     - Carrot Crate
     - Potato Crate
+- Table
 
 # Supported languages
 
