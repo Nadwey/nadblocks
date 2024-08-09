@@ -1,13 +1,13 @@
 {
-	"parent": "nova:block/base",
 	"credit": "Made with Blockbench",
+	"parent": "nova:block/base",
 	"texture_size": [64, 64],
 	"textures": {
 		"1": "block/oak_log",
 		"2": "block/oak_log_top",
 		"3": "block/oak_planks",
-		"4": "nadblocks:block/potato_crate/main",
-		"particle": "block/oak_log"
+		"4": "nadblocks:block/potato_crate",
+		"particle": "nadblocks:block/potato_crate"
 	},
 	"elements": [
 		{
