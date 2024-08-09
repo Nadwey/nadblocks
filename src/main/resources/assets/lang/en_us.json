@@ -1,7 +1,8 @@
 {
-    "block.nadblocks.hazard_block": "Hazard Block",
     "block.nadblocks.carrot_crate": "Carrot Crate",
     "block.nadblocks.potato_crate": "Potato Crate",
+    "block.nadblocks.apple_crate": "Apple Crate",
     "block.nadblocks.table": "Table",
+    "block.nadblocks.hazard_block": "Hazard Block",
     "block.nadblocks.drain_grate": "Drain Grate"
 }

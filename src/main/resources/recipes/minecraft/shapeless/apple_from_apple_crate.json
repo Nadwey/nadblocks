@@ -1,0 +1,7 @@
+{
+    "result": "minecraft:apple",
+    "amount": 9,
+    "ingredients": {
+        "nadblocks:apple_crate": 1
+    }
+}

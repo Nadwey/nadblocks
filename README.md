@@ -15,9 +15,10 @@ Some cool blocks that don't do anything (at least for now)
 ## Blocks
 
 - Hazard Block
-- *Vegetable Crates*
+- *Vegetable/Fruit Crates*
     - Carrot Crate
     - Potato Crate
+    - Apple Crate
 - Table - TODO: Improve model
 - Drain Grate
 
