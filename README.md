@@ -18,7 +18,8 @@ Some cool blocks that don't do anything (at least for now)
 - *Vegetable Crates*
     - Carrot Crate
     - Potato Crate
-- Table
+- Table - TODO: Improve model
+- Drain Grate - TODO: Implement connecting with other drain grates
 
 # Supported languages
 

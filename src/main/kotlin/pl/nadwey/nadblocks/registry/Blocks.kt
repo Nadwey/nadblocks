@@ -15,6 +15,7 @@ import xyz.xenondevs.nova.world.block.behavior.BlockDrops
 import xyz.xenondevs.nova.world.block.behavior.BlockSounds
 import xyz.xenondevs.nova.world.block.behavior.Breakable
 import xyz.xenondevs.nova.world.block.sound.SoundGroup
+import xyz.xenondevs.nova.world.block.state.property.DefaultScopedBlockStateProperties.FACING_HORIZONTAL
 
 @Init(stage = InitStage.PRE_PACK)
 object Blocks : BlockRegistry by NadBlocks.registry {
@@ -22,6 +23,8 @@ object Blocks : BlockRegistry by NadBlocks.registry {
         Breakable(2.0, VanillaToolCategories.PICKAXE, VanillaToolTiers.WOOD, true, Material.BLACK_CONCRETE)
     private val WOOD = Breakable(2.0, VanillaToolCategories.AXE, VanillaToolTiers.WOOD, false, Material.OAK_WOOD)
     private val FRAGILE_WOOD = Breakable(1.2, VanillaToolCategories.AXE, VanillaToolTiers.WOOD, false, Material.OAK_WOOD)
+    private val METAL =
+        Breakable(5.0, VanillaToolCategories.PICKAXE, VanillaToolTiers.STONE, true, Material.IRON_BLOCK)
 
     val HAZARD_BLOCK =
         solidNonInteractiveBlock("hazard_block") { behaviors(BlockDrops, STONE, BlockSounds(SoundGroup.STONE)) }
@@ -34,6 +37,16 @@ object Blocks : BlockRegistry by NadBlocks.registry {
 
     val TABLE =
         translucentNonInteractiveBlock("table") { behaviors(Table, FRAGILE_WOOD, BlockSounds(SoundGroup.WOOD)) }
+
+    val DRAIN_GRATE =
+        nonInteractiveBlock("drain_grate") {
+            behaviors(BlockDrops, METAL, BlockSounds(SoundGroup.HEAVY_CORE))
+            stateProperties(FACING_HORIZONTAL)
+            models {
+                selectModel { defaultModel.rotated() }
+                stateBacked(BackingStateCategory.LEAVES)
+            }
+        }
 
     private fun translucentNonInteractiveBlock(name: String, block: NovaBlockBuilder.() -> Unit): NovaBlock =
         nonInteractiveBlock(name) {

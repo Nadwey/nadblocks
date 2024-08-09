@@ -11,4 +11,5 @@ object Items : ItemRegistry by NadBlocks.registry {
     val CARROT_CRATE = registerItem(Blocks.CARROT_CRATE)
     val POTATO_CRATE = registerItem(Blocks.POTATO_CRATE)
     val TABLE = registerItem(Blocks.TABLE)
+    val DRAIN_GRATE = registerItem(Blocks.DRAIN_GRATE)
 }

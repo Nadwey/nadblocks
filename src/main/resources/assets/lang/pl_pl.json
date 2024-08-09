@@ -2,5 +2,6 @@
     "block.nadblocks.hazard_block": "Blok Ostrzegawczy",
     "block.nadblocks.carrot_crate": "Skrzynka z Marchewkami",
     "block.nadblocks.potato_crate": "Skrzynka z Ziemniakami",
-    "block.nadblocks.table": "Stolik"
+    "block.nadblocks.table": "Stolik",
+    "block.nadblocks.drain_grate": "Kratka Odpływowa"
 }
