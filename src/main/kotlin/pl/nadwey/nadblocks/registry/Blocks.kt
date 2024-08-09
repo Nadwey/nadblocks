@@ -1,6 +1,7 @@
 package pl.nadwey.nadblocks.registry
 
 import org.bukkit.Material
+import org.bukkit.block.BlockFace
 import pl.nadwey.nadblocks.NadBlocks
 import pl.nadwey.nadblocks.block.Table
 import xyz.xenondevs.nova.addon.registry.BlockRegistry
@@ -15,7 +16,12 @@ import xyz.xenondevs.nova.world.block.behavior.BlockDrops
 import xyz.xenondevs.nova.world.block.behavior.BlockSounds
 import xyz.xenondevs.nova.world.block.behavior.Breakable
 import xyz.xenondevs.nova.world.block.sound.SoundGroup
+import xyz.xenondevs.nova.world.block.state.property.DefaultBlockStateProperties
+import xyz.xenondevs.nova.world.block.state.property.DefaultScopedBlockStateProperties
+import xyz.xenondevs.nova.world.block.state.property.DefaultScopedBlockStateProperties.FACING_CARTESIAN
 import xyz.xenondevs.nova.world.block.state.property.DefaultScopedBlockStateProperties.FACING_HORIZONTAL
+import xyz.xenondevs.nova.world.block.state.property.DefaultScopedBlockStateProperties.FACING_ROTATION
+import xyz.xenondevs.nova.world.block.state.property.DefaultScopedBlockStateProperties.FACING_VERTICAL
 
 @Init(stage = InitStage.PRE_PACK)
 object Blocks : BlockRegistry by NadBlocks.registry {
