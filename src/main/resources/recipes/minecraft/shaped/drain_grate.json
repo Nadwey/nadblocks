@@ -1,0 +1,13 @@
+{
+    "result": "nadblocks:drain_grate",
+    "amount": 1,
+    "shape": [
+        "ggg",
+        "iii",
+        "iii"
+    ],
+    "ingredients": {
+        "g": "minecraft:iron_bars",
+        "i": "minecraft:iron_ingot"
+    }
+}
