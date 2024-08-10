@@ -42,7 +42,7 @@ jobs:
 
     - name: Build NadBlocks
       run: |
-        gradlew addonJar
+        ./gradlew addonJar
 
     - name: Upload Build
       uses: actions/upload-artifact@v4
