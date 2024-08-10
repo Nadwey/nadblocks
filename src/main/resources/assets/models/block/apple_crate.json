@@ -6,7 +6,8 @@
 		"1": "block/oak_log",
 		"2": "block/oak_log_top",
 		"3": "block/oak_planks",
-		"4": "nadblocks:block/apple_crate"
+		"4": "nadblocks:block/apple_crate",
+		"particle": "block/oak_log"
 	},
 	"elements": [
 		{

@@ -7,7 +7,8 @@
 		"3": "block/oak_planks",
 		"4": "nadblocks:block/carrot_crate/main",
 		"5": "nadblocks:block/carrot_crate/leaves",
-		"6": "block/oak_log"
+		"6": "block/oak_log",
+		"particle": "block/oak_log"
 	},
 	"elements": [
 		{
