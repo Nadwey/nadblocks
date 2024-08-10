@@ -45,7 +45,7 @@ object Blocks : BlockRegistry by NadBlocks.registry {
         translucentNonInteractiveBlock("apple_crate") { behaviors(BlockDrops, WOOD, BlockSounds(SoundGroup.BAMBOO_WOOD)) }
 
     val TABLE =
-        translucentNonInteractiveBlock("table") { behaviors(Table, FRAGILE_WOOD, BlockSounds(SoundGroup.WOOD)) }
+        translucentNonInteractiveBlock("table") { behaviors(Table, FRAGILE_WOOD, BlockSounds(SoundGroup.CHISELED_BOOKSHELF)) }
 
     val DRAIN_GRATE =
         nonInteractiveBlock("drain_grate") {
