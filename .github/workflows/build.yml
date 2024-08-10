@@ -42,6 +42,7 @@ jobs:
 
     - name: Build NadBlocks
       run: |
+        chmod +x gradlew
         ./gradlew addonJar
 
     - name: Upload Build
