@@ -1,27 +1,21 @@
 package pl.nadwey.nadblocks.registry
 
 import org.bukkit.Material
-import org.bukkit.block.BlockFace
 import pl.nadwey.nadblocks.NadBlocks
 import pl.nadwey.nadblocks.block.Table
 import xyz.xenondevs.nova.addon.registry.BlockRegistry
-import xyz.xenondevs.nova.data.resources.layout.block.BackingStateCategory
 import xyz.xenondevs.nova.initialize.Init
 import xyz.xenondevs.nova.initialize.InitStage
-import xyz.xenondevs.nova.item.tool.VanillaToolCategories
-import xyz.xenondevs.nova.item.tool.VanillaToolTiers
+import xyz.xenondevs.nova.resources.layout.block.BackingStateCategory
 import xyz.xenondevs.nova.world.block.NovaBlock
 import xyz.xenondevs.nova.world.block.NovaBlockBuilder
 import xyz.xenondevs.nova.world.block.behavior.BlockDrops
 import xyz.xenondevs.nova.world.block.behavior.BlockSounds
 import xyz.xenondevs.nova.world.block.behavior.Breakable
 import xyz.xenondevs.nova.world.block.sound.SoundGroup
-import xyz.xenondevs.nova.world.block.state.property.DefaultBlockStateProperties
-import xyz.xenondevs.nova.world.block.state.property.DefaultScopedBlockStateProperties
-import xyz.xenondevs.nova.world.block.state.property.DefaultScopedBlockStateProperties.FACING_CARTESIAN
 import xyz.xenondevs.nova.world.block.state.property.DefaultScopedBlockStateProperties.FACING_HORIZONTAL
-import xyz.xenondevs.nova.world.block.state.property.DefaultScopedBlockStateProperties.FACING_ROTATION
-import xyz.xenondevs.nova.world.block.state.property.DefaultScopedBlockStateProperties.FACING_VERTICAL
+import xyz.xenondevs.nova.world.item.tool.VanillaToolCategories
+import xyz.xenondevs.nova.world.item.tool.VanillaToolTiers
 
 @Init(stage = InitStage.PRE_PACK)
 object Blocks : BlockRegistry by NadBlocks.registry {
