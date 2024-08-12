@@ -33,13 +33,6 @@ jobs:
     - name: Setup Gradle
       uses: gradle/actions/setup-gradle@v4
 
-    - name: Clone and build Nova 0.17
-      run: |
-        git clone https://github.com/xenondevs/Nova.git
-        cd Nova
-        git checkout ver/0.17
-        ./gradlew publishToMavenLocal
-
     - name: Build NadBlocks
       run: |
         chmod +x gradlew

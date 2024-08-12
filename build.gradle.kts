@@ -11,7 +11,6 @@ plugins {
 }
 
 repositories {
-    mavenLocal()
     mavenCentral()
     maven("https://papermc.io/repo/repository/maven-public/")
     maven("https://repo.xenondevs.xyz/releases")
