@@ -1,4 +1,4 @@
-rootProject.name = "nadblocks" // TODO: Change this to your addon id
+rootProject.name = "nadblocks"
 
 dependencyResolutionManagement {
     repositories {

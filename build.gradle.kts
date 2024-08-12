@@ -1,8 +1,8 @@
 import org.jetbrains.kotlin.gradle.dsl.JvmTarget
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
-group = "pl.nadwey.nadblocks" // TODO: Change this to your group
-version = "1.0.0-SNAPSHOT" // TODO: Change this to your addon version
+group = "pl.nadwey.nadblocks"
+version = "1.0.0-SNAPSHOT"
 
 plugins {
     alias(libs.plugins.kotlin)
