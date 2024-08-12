@@ -22,29 +22,32 @@ dependencies {
 }
 
 addon {
-    id.set(project.name)
-    name.set(project.name.uppercase())
-    version.set(project.version.toString())
-    novaVersion.set(libs.versions.nova)
-    main.set("pl.nadwey.nadblocks.NadBlocks") // TODO: Change this to your main class
-    authors.add("Nadwey") // TODO: Set your list of authors
+    id = project.name
+    name = project.name.replaceFirstChar(Char::uppercase)
+    version = project.version.toString()
+    novaVersion = libs.versions.nova
+    main = "pl.nadwey.nadblocks.NadBlocks"
+    authors = listOf("Nadwey")
 }
 
 tasks {
     register<Copy>("addonJar") {
         group = "build"
-
         dependsOn("jar")
-
-        from(File(layout.buildDirectory.asFile.get(), "libs/${project.name}-${project.version}.jar"))
-        
-        into((project.findProperty("outDir") as? String)?.let(::File) ?: project.buildDir)
+        from(File(project.layout.buildDirectory.get().asFile, "libs/${project.name}-${project.version}.jar"))
+        into((project.findProperty("outDir") as? String)?.let(::File) ?: project.layout.buildDirectory.get().asFile)
         rename { "${addonMetadata.get().addonName.get()}-${project.version}.jar" }
     }
     
     withType<KotlinCompile> {
         compilerOptions {
-            jvmTarget to JvmTarget.JVM_21
+            jvmTarget = JvmTarget.JVM_21
         }
+    }
+}
+
+afterEvaluate {
+    tasks.getByName<Jar>("jar") {
+        archiveClassifier = ""
     }
 }
