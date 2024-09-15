@@ -21,6 +21,7 @@ Some cool blocks that don't do anything (at least for now)
     - Apple Crate
 - Table - TODO: Improve model
 - Drain Grate
+- Lamp
 
 # Supported languages
 
