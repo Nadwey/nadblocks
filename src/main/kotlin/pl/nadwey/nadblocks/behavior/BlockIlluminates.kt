@@ -11,18 +11,16 @@ import xyz.xenondevs.nova.world.block.behavior.BlockBehavior
 import xyz.xenondevs.nova.world.block.state.NovaBlockState
 
 // https://www.spigotmc.org/threads/1-19-3-1-20-3-nms-make-block-emit-light.594267/
-class BlockIlluminates(private val level: Int) : BlockBehavior {
-
-    companion object {
-        val LIGHT_BLOCK_FACES = arrayOf(
-            Direction.DOWN,
-            Direction.EAST,
-            Direction.NORTH,
-            Direction.SOUTH,
-            Direction.UP,
-            Direction.WEST
-        )
-    }
+class BlockIlluminates(
+    private val level: Int, private val blockFaces: Array<Direction> = arrayOf(
+        Direction.DOWN,
+        Direction.EAST,
+        Direction.NORTH,
+        Direction.SOUTH,
+        Direction.UP,
+        Direction.WEST
+    )
+) : BlockBehavior {
 
     override fun handleNeighborChanged(pos: BlockPos, state: NovaBlockState, neighborPos: BlockPos) {
         updateLight(pos)
@@ -35,7 +33,7 @@ class BlockIlluminates(private val level: Int) : BlockBehavior {
     override fun handleBreak(pos: BlockPos, state: NovaBlockState, ctx: Context<DefaultContextIntentions.BlockBreak>) {
         val serverLevel = pos.world.serverLevel
 
-        LIGHT_BLOCK_FACES.forEach { face ->
+        blockFaces.forEach { face ->
             val entry = pos.nmsPos.relative(face)
             val blockData = serverLevel.getBlockState(entry)
             if (blockData.isAir || blockData.block == Blocks.LIGHT) {
@@ -48,7 +46,7 @@ class BlockIlluminates(private val level: Int) : BlockBehavior {
         val serverLevel = pos.world.serverLevel
         val newState = Blocks.LIGHT.defaultBlockState().setValue(LightBlock.LEVEL, level)
 
-        LIGHT_BLOCK_FACES.forEach { face ->
+        blockFaces.forEach { face ->
             val entry = pos.nmsPos.relative(face)
             val blockData = serverLevel.getBlockState(entry)
             if (blockData.isAir || blockData.block == Blocks.LIGHT) {

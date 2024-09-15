@@ -1,7 +1,9 @@
 package pl.nadwey.nadblocks.registry
 
+import net.minecraft.core.Direction
 import org.bukkit.Material
 import pl.nadwey.nadblocks.NadBlocks
+import pl.nadwey.nadblocks.behavior.BlockIlluminates
 import pl.nadwey.nadblocks.block.Table
 import xyz.xenondevs.nova.addon.registry.BlockRegistry
 import xyz.xenondevs.nova.initialize.Init
@@ -49,6 +51,16 @@ object Blocks : BlockRegistry by NadBlocks.registry {
                 selectModel { defaultModel.rotated() }
                 stateBacked(BackingStateCategory.LEAVES)
             }
+        }
+
+    val CEILING_LIGHT =
+        solidNonInteractiveBlock("ceiling_light") {
+            behaviors(
+                BlockDrops,
+                BlockIlluminates(15, arrayOf(Direction.DOWN)),
+                METAL,
+                BlockSounds(SoundGroup.METAL)
+            )
         }
 
     private fun translucentNonInteractiveBlock(name: String, block: NovaBlockBuilder.() -> Unit): NovaBlock =
