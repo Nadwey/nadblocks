@@ -15,5 +15,5 @@ object Items : ItemRegistry by NadBlocks.registry {
 
     val DRAIN_GRATE = registerItem(Blocks.DRAIN_GRATE)
     val HAZARD_BLOCK = registerItem(Blocks.HAZARD_BLOCK)
-    val CEILING_LIGHT = registerItem(Blocks.CEILING_LIGHT)
+    val LAMP = registerItem(Blocks.LAMP)
 }

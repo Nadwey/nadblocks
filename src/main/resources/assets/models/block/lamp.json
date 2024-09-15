@@ -1,0 +1,24 @@
+{
+	"credit": "Made with Blockbench",
+	"parent": "nova:block/base",
+	"texture_size": [32, 32],
+	"textures": {
+		"1": "nadblocks:block/lamp",
+		"particle": "nadblocks:block/lamp"
+	},
+	"elements": [
+		{
+			"from": [0, 0, 13],
+			"to": [16, 16, 16],
+			"rotation": {"angle": 0, "axis": "x", "origin": [0, 16, 0]},
+			"faces": {
+				"north": {"uv": [8, 8, 0, 16], "rotation": 180, "texture": "#1"},
+				"east": {"uv": [8, 1.5, 16, 3], "rotation": 270, "texture": "#1"},
+				"south": {"uv": [8, 8, 0, 0], "texture": "#1"},
+				"west": {"uv": [8, 4.5, 16, 6], "rotation": 90, "texture": "#1"},
+				"up": {"uv": [8, 0, 16, 1.5], "rotation": 180, "texture": "#1"},
+				"down": {"uv": [8, 3, 16, 4.5], "texture": "#1"}
+			}
+		}
+	]
+}

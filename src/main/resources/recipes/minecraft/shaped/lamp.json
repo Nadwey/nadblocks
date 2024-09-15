@@ -1,0 +1,14 @@
+{
+    "result": "nadblocks:lamp",
+    "amount": 2,
+    "shape": [
+        "iii",
+        " g ",
+        " b "
+    ],
+    "ingredients": {
+        "i": "minecraft:iron_ingot",
+        "g": "minecraft:glowstone",
+        "b": "minecraft:iron_bars"
+    }
+}

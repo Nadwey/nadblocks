@@ -1,6 +1,5 @@
 package pl.nadwey.nadblocks.registry
 
-import net.minecraft.core.Direction
 import org.bukkit.Material
 import pl.nadwey.nadblocks.NadBlocks
 import pl.nadwey.nadblocks.behavior.BlockIlluminates
@@ -15,6 +14,7 @@ import xyz.xenondevs.nova.world.block.behavior.BlockDrops
 import xyz.xenondevs.nova.world.block.behavior.BlockSounds
 import xyz.xenondevs.nova.world.block.behavior.Breakable
 import xyz.xenondevs.nova.world.block.sound.SoundGroup
+import xyz.xenondevs.nova.world.block.state.property.DefaultScopedBlockStateProperties.FACING_CARTESIAN
 import xyz.xenondevs.nova.world.block.state.property.DefaultScopedBlockStateProperties.FACING_HORIZONTAL
 import xyz.xenondevs.nova.world.item.tool.VanillaToolCategories
 import xyz.xenondevs.nova.world.item.tool.VanillaToolTiers
@@ -53,14 +53,19 @@ object Blocks : BlockRegistry by NadBlocks.registry {
             }
         }
 
-    val CEILING_LIGHT =
-        solidNonInteractiveBlock("ceiling_light") {
+    val LAMP =
+        nonInteractiveBlock("lamp") {
             behaviors(
                 BlockDrops,
-                BlockIlluminates(15, arrayOf(Direction.DOWN)),
+                BlockIlluminates(15),
                 METAL,
                 BlockSounds(SoundGroup.METAL)
             )
+            stateProperties(FACING_CARTESIAN)
+            models {
+                selectModel { defaultModel.rotated() }
+                stateBacked(BackingStateCategory.LEAVES)
+            }
         }
 
     private fun translucentNonInteractiveBlock(name: String, block: NovaBlockBuilder.() -> Unit): NovaBlock =

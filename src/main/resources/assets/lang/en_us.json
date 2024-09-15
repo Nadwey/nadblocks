@@ -4,5 +4,6 @@
     "block.nadblocks.apple_crate": "Apple Crate",
     "block.nadblocks.table": "Table",
     "block.nadblocks.hazard_block": "Hazard Block",
-    "block.nadblocks.drain_grate": "Drain Grate"
+    "block.nadblocks.drain_grate": "Drain Grate",
+    "block.nadblocks.lamp": "Lamp"
 }
