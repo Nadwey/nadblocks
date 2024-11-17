@@ -8,6 +8,7 @@ bin/
 .recommenders/
 
 # Temp files
+.kotlin/
 tmp/
 *.tmp
 *.swp
